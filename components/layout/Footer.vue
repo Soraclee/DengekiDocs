@@ -5,12 +5,7 @@
         {{ footer.credits }}
       </span>
       <span class="flex-1" />
-      <NuxtLink
-        v-for="(link, i) in footer.links"
-        :key="i"
-        :to="link?.to"
-        :target="link?.target"
-      >
+      <NuxtLink v-for="(link, i) in footer.links" :key="i" :to="link?.to" :target="link?.target">
         <UiButton variant="ghost" :size="link?.icon && !link?.title ? 'icon' : 'default'" class="flex gap-2">
           <Icon v-if="link?.icon" :name="link.icon" size="20" />
           <span v-if="link?.title">{{ link.title }}</span>

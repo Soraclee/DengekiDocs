@@ -8,39 +8,32 @@
         <UiDialogDescription aria-describedby="undefined" />
       </VisuallyHidden>
       <UiCommand v-model:search-term="input" class="h-[350px]">
-        <UiCommandInput
-          placeholder="Search documentation..."
-          @keydown.enter="handleEnter"
-          @keydown.down="handleNavigate(1)"
-          @keydown.up="handleNavigate(-1)"
-        />
+        <UiCommandInput placeholder="Recherche de documentation..." @keydown.enter="handleEnter"
+          @keydown.down="handleNavigate(1)" @keydown.up="handleNavigate(-1)" />
         <UiCommandList class="text-sm" @escape-key-down="open = false">
           <div v-if="searchResult?.length" class="p-1.5">
-            <NuxtLink
-              v-for="(item, i) in searchResult"
-              :id="i"
-              :key="item.id"
-              :to="item.id"
+            <NuxtLink v-for="(item, i) in searchResult" :id="i" :key="item.id" :to="item.id"
               class="flex p-2 hover:bg-muted hover:cursor-pointer rounded-md select-none"
-              :class="[i === activeSelect && 'bg-muted']"
-              @click="open = false; activeSelect = i;"
-            >
-              <Icon v-if="getItemIcon(item.id)" :name="getItemIcon(item.id)" class="flex-shrink-0 self-center h-4 w-4 mr-2" />
+              :class="[i === activeSelect && 'bg-muted']" @click="open = false; activeSelect = i;">
+              <Icon v-if="getItemIcon(item.id)" :name="getItemIcon(item.id)"
+                class="flex-shrink-0 self-center h-4 w-4 mr-2" />
               <div v-else class="flex-shrink-0 h-4 w-4 mr-2" />
 
-              <span v-for="(subtitle, j) in item.titles" :key="`${subtitle}${j}`" class="flex flex-shrink-0 self-center">
+              <span v-for="(subtitle, j) in item.titles" :key="`${subtitle}${j}`"
+                class="flex flex-shrink-0 self-center">
                 {{ subtitle }}
                 <Icon name="lucide:chevron-right" class="self-center mx-0.5 text-muted-foreground" />
               </span>
               <span class="self-center flex-shrink-0">
                 {{ item.title }}
               </span>
-              <span class="self-center text-xs text-muted-foreground truncate ml-2" v-html="getHighlightedContent(item.content)" />
+              <span class="self-center text-xs text-muted-foreground truncate ml-2"
+                v-html="getHighlightedContent(item.content)" />
             </NuxtLink>
           </div>
 
           <div v-if="!searchResult?.length && input?.length" class="text-center text-muted-foreground pt-4">
-            No results found.
+            Pas de résultat pour votre recherche.
           </div>
 
           <template v-if="!searchResult?.length && !input?.length">
@@ -59,15 +52,15 @@
             <UiCommandGroup heading="Theme" class="p-1.5">
               <UiCommandItem value="light" @click="colorMode.preference = 'light'">
                 <Icon name="lucide:sun" class="h-4 w-4 mr-2" />
-                <span>Light</span>
+                <span>Clair</span>
               </UiCommandItem>
               <UiCommandItem value="dark" @click="colorMode.preference = 'dark'">
                 <Icon name="lucide:moon" class="h-4 w-4 mr-2" />
-                <span>Dark</span>
+                <span>Sombre</span>
               </UiCommandItem>
               <UiCommandItem value="system" @click="colorMode.preference = 'auto'">
                 <Icon name="lucide:monitor" class="h-4 w-4 mr-2" />
-                <span>System</span>
+                <span>Système</span>
               </UiCommandItem>
             </UiCommandGroup>
           </template>

@@ -1,10 +1,7 @@
 <template>
   <LayoutHeader />
-  <div class="container px-4 md:px-8 py-6">
-    <ContentRenderer
-      :key="page._id"
-      :value="page"
-    />
+  <div class="container px-4 md:px-8 py-6 min-h-screen flex">
+    <ContentRenderer :key="page._id" :value="page" class="m-auto" />
   </div>
   <LayoutFooter />
 </template>

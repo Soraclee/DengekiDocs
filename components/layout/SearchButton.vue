@@ -1,13 +1,9 @@
 <template>
-  <UiButton
-    v-if="enable"
-    variant="outline"
+  <UiButton v-if="enable" variant="outline"
     class="pr-1.5 h-8 self-center w-full rounded-md font-normal text-muted-foreground hover:text-accent-foreground"
-    :class="[inAside ? 'mb-4' : 'md:w-40 lg:w-64']"
-    @click="isOpen = true"
-  >
+    :class="[inAside ? 'mb-4' : 'md:w-40 lg:w-64']" @click="isOpen = true">
     <span class="overflow-hidden mr-auto">
-      Search...
+      Rechercher...
     </span>
     <Kbd class="hidden md:block ml-auto">
       <span class="text-xs">⌘</span>K

@@ -1,30 +1,22 @@
 ---
-title: Home
+title: Accueil
 navigation: false
 ---
-
 ::hero
 ---
-announcement:
-  title: 'Release v0.3.1'
-  icon: 'noto:party-popper'
-  to: /getting-started
 actions:
-  - name: Get Started
-    to: /getting-started
-  - name: GitHub
+  - name: Commencer
+    to: /commencer
+  - name: Dengeki.fr
     variant: outline
-    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt
-    leftIcon: 'lucide:github'
+    to: https://dengeki.fr
+    leftIcon: 'lucide:globe'
+    target: _blank
 ---
 
 #title
-Effortless and Beautiful<br>Docs Template.
+Documentation<br>Dengeki
 
 #description
-Beautifully designed Nuxt Content template with shadcn-vue.<br>Customizable. Compatible. Open Source.
+Simple documentation pour les ajouts et modifications des animes sur Dengeki.
 ::
-
-<div class="border rounded-lg shadow-md">
-  <iframe src="/getting-started/introduction" height="700" width="100%" class="rounded-lg" scrolling="no" frameborder="0">
-</div>
