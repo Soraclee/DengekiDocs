@@ -4,6 +4,7 @@ export default defineAppConfig({
       name: 'Dengeki - Docs',
       description: 'Simple documentation pour les ajouts et modifications des animes sur Dengeki.',
       ogImage: '/hero.png',
+      robots: 'noindex, nofollow',
     },
     theme: {
       customizable: false,
@@ -106,7 +107,7 @@ export default defineAppConfig({
         target: '_blank',
       }, {
         title: 'Dengeki.fr',
-        icon: 'lucide:circle-dot',
+        icon: 'lucide:globe',
         to: 'https://dengeki.fr',
         target: '_blank',
       }],

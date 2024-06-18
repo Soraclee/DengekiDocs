@@ -54,6 +54,7 @@
     "@antfu/eslint-config": "^2.21.1",
     "@iconify-json/lucide": "^1.1.193",
     "@iconify-json/vscode-icons": "^1.1.35",
+    "@pinia/nuxt": "^0.5.1",
     "@vueuse/core": "^10.11.0",
     "@vueuse/nuxt": "^10.11.0",
     "eslint": "9.2.0",
